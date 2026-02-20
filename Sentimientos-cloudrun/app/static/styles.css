@@ -1,0 +1,207 @@
+/* =========================
+   RESET GENERAL SEGURO
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+:root {
+    --primary: #667eea;
+    --primary-dark: #5a67d8;
+    --secondary: #764ba2;
+    --white: #ffffff;
+    --dark: #2d3748;
+    --glass: rgba(255, 255, 255, 0.15);
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.2);
+    --shadow-strong: 0 20px 60px rgba(0,0,0,0.35);
+    --radius: 16px;
+    --transition: all 0.3s ease;
+}
+
+/* =========================
+   BODY CON FONDO ANIMADO
+========================= */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #6b73ff, #9d50bb);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+.container {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    padding: 50px;
+    width: 520px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-strong);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   TITULO
+========================= */
+h1 {
+    color: var(--white);
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+input:focus {
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.5);
+}
+
+/* =========================
+   BOTON PRINCIPAL (NO SE ELIMINA)
+========================= */
+button {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: none;
+    color: var(--white);
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* =========================
+   BOTONES EXTRA (OPCIONALES)
+========================= */
+.btn-success {
+    background: linear-gradient(135deg, #38d39f, #2ebf91);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ff6b6b, #e74a3b);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary);
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.card {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   TABLAS
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    background: rgba(255,255,255,0.1);
+}
+
+tr:hover td {
+    background: rgba(255,255,255,0.2);
+}
+
+/* =========================
+   SCROLL PERSONALIZADO
+========================= */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 30px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
